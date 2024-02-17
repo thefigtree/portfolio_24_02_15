@@ -1,5 +1,11 @@
+import { Quote } from "./components/Quote";
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <>
+      <Quote></Quote>
+    </>
+  );
 };
 
 export default App;
