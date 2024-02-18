@@ -41,7 +41,7 @@ const Center = styled.div`
 `;
 
 export const ColorSection = () => {
-  //   gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
   const sectionRef = useRef(null);
   const leftRef = useRef(null);
@@ -65,10 +65,17 @@ export const ColorSection = () => {
       scrollTrigger: {
         trigger: Elem,
         start: "top top",
-        end: `+=${Elem.offsetWidth + 1000}`,
+        end: "center bottom",
         scrub: true,
         pin: true,
         pinSpacing: true,
+        // markers: {
+        //   startColor: "white",
+        //   endColor: "white",
+        //   fontSize: "18px",
+        //   fontWeight: "bold",
+        //   indent: 20,
+        // },
       },
     });
 
@@ -77,8 +84,15 @@ export const ColorSection = () => {
         scrollTrigger: {
           trigger: Elem,
           start: "top top",
-          end: `+=${Elem.offsetWidth + 1000}`,
+          end: "center bottom",
           scrub: true,
+          //   markers: {
+          //     startColor: "white",
+          //     endColor: "white",
+          //     fontSize: "18px",
+          //     fontWeight: "bold",
+          //     indent: 20,
+          //   },
         },
       })
       .to(Elem, {
