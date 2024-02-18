@@ -69,13 +69,6 @@ export const ColorSection = () => {
         scrub: true,
         pin: true,
         pinSpacing: true,
-        // markers: {
-        //   startColor: "white",
-        //   endColor: "white",
-        //   fontSize: "18px",
-        //   fontWeight: "bold",
-        //   indent: 20,
-        // },
       },
     });
 
@@ -86,13 +79,6 @@ export const ColorSection = () => {
           start: "top top",
           end: "center bottom",
           scrub: true,
-          //   markers: {
-          //     startColor: "white",
-          //     endColor: "white",
-          //     fontSize: "18px",
-          //     fontWeight: "bold",
-          //     indent: 20,
-          //   },
         },
       })
       .to(Elem, {
