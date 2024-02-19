@@ -1,3 +1,4 @@
+// import gsap from "gsap";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
@@ -59,7 +60,7 @@ export const ColorSection = () => {
       rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.4)`;
     };
 
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(Elem, {
       scrollTrigger: {
@@ -117,6 +118,7 @@ export const ColorSection = () => {
         onReverseComplete: updateColor,
         onReverseCompleteParams: ["#215E7C", "Blue", "33, 94, 124"],
       });
+    console.log(Elem.offsetWidth);
 
     return () => {};
   }, []);
