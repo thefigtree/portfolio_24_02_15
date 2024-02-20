@@ -60,7 +60,7 @@ export const ColorSection = () => {
       rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.4)`;
     };
 
-    // gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(Elem, {
       scrollTrigger: {
