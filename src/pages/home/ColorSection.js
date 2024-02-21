@@ -67,16 +67,16 @@ export const ColorSection = () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(Elem, {
-      scrollTrigger: {
-        trigger: Elem,
-        start: "top top",
-        end: "center top",
-        scrub: true,
-        pin: true,
-        pinSpacing: true,
-      },
-    });
+    // gsap.to(Elem, {
+    //   scrollTrigger: {
+    //     trigger: Elem,
+    //     start: "top top",
+    //     end: "center top",
+    //     scrub: true,
+    //     pin: true,
+    //     pinSpacing: true,
+    //   },
+    // });
 
     let t1 = gsap.timeline({
       scrollTrigger: {
@@ -129,7 +129,7 @@ export const ColorSection = () => {
     // console.log(Elem.offsetWidth);
 
     return () => {
-      // if (t1) t1.kill();
+      if (t1) t1.kill();
     };
   }, []);
 
