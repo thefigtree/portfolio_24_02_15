@@ -1,11 +1,11 @@
 import { ColorSection } from "./ColorSection";
-import { StackSection } from "./StackSection";
+// import { StackSection } from "./StackSection";
 
 export const Home = () => {
   return (
     <>
       <ColorSection></ColorSection>
-      <StackSection></StackSection>
+      {/* <StackSection></StackSection> */}
     </>
   );
 };

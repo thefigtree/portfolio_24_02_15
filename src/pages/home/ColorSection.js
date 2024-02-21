@@ -8,7 +8,9 @@ import { useScrollTop } from "../../lib/useScrollTop";
 const Section = styled.section`
   width: 100vw;
   height: 100vh;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   /* top: -30%; */
   display: flex;
   justify-content: space-between;
@@ -77,16 +79,13 @@ export const ColorSection = () => {
     // });
 
     let t1 = gsap.timeline({
-      // defaults: {
-      //   ease: "elastic.out(1,1)",
-      // },
       scrollTrigger: {
         trigger: Elem,
         start: "top top",
         end: `+=${Elem.offsetWidth + 1000}`,
         scrub: true,
         // snap: 1 / (Elem.length - 1),
-        pin: true,
+        // pin: true,
         pinSpacing: true,
         markers: true,
       },
@@ -130,14 +129,14 @@ export const ColorSection = () => {
     // console.log(Elem.offsetWidth);
 
     return () => {
-      if (t1) t1.kill();
+      // if (t1) t1.kill();
     };
   }, []);
 
   return (
     <Section ref={sectionRef}>
       <Left ref={leftRef}></Left>
-      <Center ref={textRef}>Sierra Blue</Center>
+      <Center ref={textRef}></Center>
       <Right ref={rightRef}></Right>
     </Section>
   );
