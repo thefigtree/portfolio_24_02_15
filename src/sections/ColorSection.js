@@ -1,13 +1,15 @@
 // import gsap from "gsap";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
+import { useScrollTop } from "../lib/useScrollTop";
 
 const Section = styled.section`
   width: 100vw;
   height: 100vh;
   position: relative;
+  /* top: -30%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,6 +48,7 @@ export const ColorSection = () => {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const textRef = useRef(null);
+  useScrollTop();
 
   useLayoutEffect(() => {
     let Elem = sectionRef.current;
@@ -62,65 +65,69 @@ export const ColorSection = () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(Elem, {
+    // gsap.to(Elem, {
+    //   scrollTrigger: {
+    //     trigger: Elem,
+    //     start: "top top",
+    //     end: `+=${Elem.offsetWidth}`,
+    //     scrub: true,
+    //     pin: true,
+    //     pinSpacing: true,
+    //   },
+    // });
+
+    let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: Elem,
         start: "top top",
-        end: `+=${Elem.offsetWidth}`,
+        end: "center top",
         scrub: true,
         pin: true,
         pinSpacing: true,
+        markers: true,
       },
     });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
+    });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#F9E5C9", "Gold", "249, 229, 201"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#F9E5C9", "Gold", "249, 229, 201"],
+    });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
+    });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
+    });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#A50011", "Red", "165, 0, 17"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#A50011", "Red", "165, 0, 17"],
+    });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#215E7C", "Blue", "33, 94, 124"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#215E7C", "Blue", "33, 94, 124"],
+    });
+    // console.log(Elem.offsetWidth);
 
-    let t1 = gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: Elem,
-          start: "top top",
-          end: `+=${Elem.offsetWidth}`,
-          scrub: true,
-        },
-      })
-      .to(Elem, {
-        onStart: updateColor,
-        onStartParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
-        onReverseComplete: updateColor,
-        onReverseCompleteParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
-      })
-      .to(Elem, {
-        onStart: updateColor,
-        onStartParams: ["#F9E5C9", "Gold", "249, 229, 201"],
-        onReverseComplete: updateColor,
-        onReverseCompleteParams: ["#F9E5C9", "Gold", "249, 229, 201"],
-      })
-      .to(Elem, {
-        onStart: updateColor,
-        onStartParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
-        onReverseComplete: updateColor,
-        onReverseCompleteParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
-      })
-      .to(Elem, {
-        onStart: updateColor,
-        onStartParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
-        onReverseComplete: updateColor,
-        onReverseCompleteParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
-      })
-      .to(Elem, {
-        onStart: updateColor,
-        onStartParams: ["#A50011", "Red", "165, 0, 17"],
-        onReverseComplete: updateColor,
-        onReverseCompleteParams: ["#A50011", "Red", "165, 0, 17"],
-      })
-      .to(Elem, {
-        onStart: updateColor,
-        onStartParams: ["#215E7C", "Blue", "33, 94, 124"],
-        onReverseComplete: updateColor,
-        onReverseCompleteParams: ["#215E7C", "Blue", "33, 94, 124"],
-      });
-    console.log(Elem.offsetWidth);
-
-    return () => {};
+    return () => {
+      if (t1) t1.kill();
+    };
   }, []);
 
   return (
