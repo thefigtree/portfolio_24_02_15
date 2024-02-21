@@ -8,7 +8,7 @@ import { useScrollTop } from "../../lib/useScrollTop";
 const Section = styled.section`
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   /* top: -30%; */
@@ -67,25 +67,25 @@ export const ColorSection = () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    // gsap.to(Elem, {
-    //   scrollTrigger: {
-    //     trigger: Elem,
-    //     start: "top top",
-    //     end: `+=${Elem.offsetWidth}`,
-    //     scrub: true,
-    //     pin: true,
-    //     pinSpacing: true,
-    //   },
-    // });
+    gsap.to(Elem, {
+      scrollTrigger: {
+        trigger: Elem,
+        start: "top top",
+        end: "center top",
+        scrub: true,
+        pin: true,
+        pinSpacing: true,
+      },
+    });
 
     let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: Elem,
         start: "top top",
-        end: `+=${Elem.offsetWidth + 1000}`,
+        end: "center top",
         scrub: true,
         // snap: 1 / (Elem.length - 1),
-        // pin: true,
+        pin: true,
         pinSpacing: true,
         markers: true,
       },
