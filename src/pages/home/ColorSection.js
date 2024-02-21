@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
-import { useScrollTop } from "../lib/useScrollTop";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const Section = styled.section`
   width: 100vw;
@@ -37,7 +37,7 @@ const Center = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg);
+  transform: translate(-50%, -50%);
   font-size: 32px;
   text-transform: uppercase;
   filter: brightness(0.85);
@@ -77,11 +77,15 @@ export const ColorSection = () => {
     // });
 
     let t1 = gsap.timeline({
+      // defaults: {
+      //   ease: "elastic.out(1,1)",
+      // },
       scrollTrigger: {
         trigger: Elem,
         start: "top top",
-        end: "center top",
+        end: `+=${Elem.offsetWidth + 1000}`,
         scrub: true,
+        // snap: 1 / (Elem.length - 1),
         pin: true,
         pinSpacing: true,
         markers: true,
