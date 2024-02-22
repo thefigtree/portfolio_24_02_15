@@ -63,17 +63,6 @@ export const ColorSection = () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    // gsap.to(Elem, {
-    //   scrollTrigger: {
-    //     trigger: Elem,
-    //     start: "top top",
-    //     end: `${Elem.offsetWidth + 500}`,
-    //     scrub: true,
-    //     pin: true,
-    //     pinSpacing: true,
-    //   },
-    // });
-
     let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: Elem,
@@ -86,6 +75,7 @@ export const ColorSection = () => {
         markers: true,
       },
     });
+
     t1.to(Elem, {
       onStart: updateColor,
       onStartParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
@@ -123,6 +113,7 @@ export const ColorSection = () => {
       onReverseCompleteParams: ["#215E7C", "Blue", "33, 94, 124"],
     });
     // console.log(Elem.offsetWidth);
+    // console.log(updateColor);
 
     return () => {
       if (t1) t1.revert();
