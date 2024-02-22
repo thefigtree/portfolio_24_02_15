@@ -1,4 +1,3 @@
-// import gsap from "gsap";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
@@ -9,9 +8,6 @@ const Section = styled.section`
   width: 100vw;
   height: 100vh;
   position: relative;
-  top: 0;
-  left: 0;
-  /* top: -30%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,7 +67,7 @@ export const ColorSection = () => {
     //   scrollTrigger: {
     //     trigger: Elem,
     //     start: "top top",
-    //     end: "center top",
+    //     end: `${Elem.offsetWidth + 500}`,
     //     scrub: true,
     //     pin: true,
     //     pinSpacing: true,
@@ -82,9 +78,9 @@ export const ColorSection = () => {
       scrollTrigger: {
         trigger: Elem,
         start: "top top",
-        end: "center top",
+        end: `${Elem.offsetWidth + 1000}`,
         scrub: true,
-        // snap: 1 / (Elem.length - 1),
+        // snap: 1,
         pin: true,
         pinSpacing: true,
         markers: true,
@@ -129,7 +125,7 @@ export const ColorSection = () => {
     // console.log(Elem.offsetWidth);
 
     return () => {
-      if (t1) t1.kill();
+      if (t1) t1.revert();
     };
   }, []);
 
