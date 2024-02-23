@@ -67,7 +67,7 @@ export const ColorSection = () => {
       scrollTrigger: {
         trigger: Elem,
         start: "top top",
-        end: `${Elem.offsetWidth + 1000}`,
+        end: `${Elem.offsetWidth + 750}`,
         scrub: true,
         // snap: 1,
         pin: true,
