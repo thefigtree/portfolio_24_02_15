@@ -5,8 +5,9 @@ const Section = styled.section`
   height: 100vh;
   position: relative;
   background-color: #111;
+  color: white;
 `;
 
 export const StackSection = () => {
-  return <Section></Section>;
+  return <Section>My Stack</Section>;
 };
