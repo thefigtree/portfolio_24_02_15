@@ -6,6 +6,7 @@ const Section = styled.section`
   position: relative;
   background-color: #111;
   color: white;
+  text-align: center;
 `;
 
 export const StackSection = () => {
