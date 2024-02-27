@@ -49,6 +49,8 @@ export const ColorSection = () => {
   useScrollTop();
 
   useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     let Elem = sectionRef.current;
     let leftElem = leftRef.current;
     let rightElem = rightRef.current;
@@ -61,13 +63,11 @@ export const ColorSection = () => {
       rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.4)`;
     };
 
-    gsap.registerPlugin(ScrollTrigger);
-
     let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: Elem,
         start: "top top",
-        end: `${Elem.offsetWidth + 750}`,
+        end: `${Elem.offsetWidth + 1000}`,
         scrub: true,
         // snap: 1,
         pin: true,
@@ -78,9 +78,9 @@ export const ColorSection = () => {
 
     t1.to(Elem, {
       onStart: updateColor,
-      onStartParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
+      onStartParams: ["#9BB5CE", "안녕하세요", "155, 181, 206"],
       onReverseComplete: updateColor,
-      onReverseCompleteParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
+      onReverseCompleteParams: ["#9BB5CE", "안녕하세요", "155, 181, 206"],
     });
     t1.to(Elem, {
       onStart: updateColor,
