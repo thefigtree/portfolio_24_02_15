@@ -37,6 +37,7 @@ const Center = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 32px;
+  color: #9bb5ce;
   text-transform: uppercase;
   filter: brightness(0.85);
 `;
@@ -78,9 +79,9 @@ export const ColorSection = () => {
 
     t1.to(Elem, {
       onStart: updateColor,
-      onStartParams: ["#9BB5CE", "안녕하세요", "155, 181, 206"],
+      onStartParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
       onReverseComplete: updateColor,
-      onReverseCompleteParams: ["#9BB5CE", "안녕하세요", "155, 181, 206"],
+      onReverseCompleteParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
     });
     t1.to(Elem, {
       onStart: updateColor,
@@ -123,7 +124,7 @@ export const ColorSection = () => {
   return (
     <Section ref={sectionRef}>
       <Left ref={leftRef}></Left>
-      <Center ref={textRef}></Center>
+      <Center ref={textRef}>Sierra Blue</Center>
       <Right ref={rightRef}></Right>
     </Section>
   );

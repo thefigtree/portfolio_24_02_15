@@ -6,7 +6,9 @@ const Section = styled.section`
   position: relative;
   background-color: #111;
   color: white;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const StackSection = () => {
