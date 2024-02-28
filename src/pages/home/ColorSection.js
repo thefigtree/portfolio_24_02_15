@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 import { useScrollTop } from "../../lib/useScrollTop";
+import { SyntacticSugar } from "./SyntacticSugar";
 
 const Section = styled.section`
   width: 100vw;
