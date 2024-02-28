@@ -68,6 +68,7 @@ export const SyntacticSugar = () => {
   const textFirstRef = useRef(null);
   const textSecondRef = useRef(null);
   const webconRef = useRef(null);
+  const imgRef = useRef(null);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -76,6 +77,7 @@ export const SyntacticSugar = () => {
     let First = textFirstRef.current;
     let Second = textSecondRef.current;
     let Elem = webconRef.current;
+    let Img = imgRef.current;
 
     ScrollTrigger.create({
       trigger: Elem,
@@ -110,27 +112,50 @@ export const SyntacticSugar = () => {
         scrub: 1,
       },
     });
+
+    gsap.to(Img, {
+      rotation: 0,
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      ease: "power2.inOut",
+      scrollTrigger: {
+        start: "top top",
+        end: `+=200%`,
+        scrub: 1,
+      },
+    });
+
+    gsap.to(Img, {
+      scale: 1,
+      // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      ease: "power2.inOut",
+      scrollTrigger: {
+        start: "top top",
+        end: `+=200%`,
+        scrub: 1,
+      },
+    });
   }, []);
 
   return (
     <Section>
       <Header ref={headerRef}>
         <TextCon ref={textFirstRef}>
-          <Con>a</Con>
-          <Con>r</Con>
-          <Con>t</Con>
-          <Con>w</Con>
+          <Con>P</Con>
+          <Con>O</Con>
+          <Con>R</Con>
+          <Con>T</Con>
         </TextCon>
         <TextCon ref={textSecondRef}>
-          <Con>o</Con>
-          <Con>r</Con>
-          <Con>k</Con>
-          <Con>s</Con>
+          <Con>F</Con>
+          <Con>O</Con>
+          <Con>L</Con>
+          <Con>I</Con>
+          <Con>O</Con>
         </TextCon>
       </Header>
 
       <WebCon ref={webconRef}>
-        <Img>
+        <Img ref={imgRef}>
           <img
             src="https://cdn.pixabay.com/photo/2021/11/17/11/02/flowers-6803234_640.png"
             alt=""
