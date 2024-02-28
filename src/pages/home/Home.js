@@ -1,13 +1,13 @@
-import { ColorSection } from "./ColorSection";
-import { Quote } from "./Quote";
-import { StackSection } from "./StackSection";
+import { SyntacticSugar } from "./SyntacticSugar";
+// import { ColorSection } from "./ColorSection";
+// import { StackSection } from "./StackSection";
 
 export const Home = () => {
   return (
     <>
-      <Quote></Quote>
-      <ColorSection></ColorSection>
-      <StackSection></StackSection>
+      <SyntacticSugar></SyntacticSugar>
+      {/* <ColorSection></ColorSection> */}
+      {/* <StackSection></StackSection> */}
     </>
   );
 };
