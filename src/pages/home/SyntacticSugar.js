@@ -2,6 +2,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
+// import { useScrollTop } from "../../lib/useScrollTop";
 
 // const Section = styled.section`
 //   width: 100vw;
@@ -105,6 +106,7 @@ export const SyntacticSugar = () => {
   const webconRef = useRef(null);
   const imgRef = useRef(null);
   const conholderRef = useRef(null);
+  // useScrollTop();
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -146,6 +148,8 @@ export const SyntacticSugar = () => {
         onLeaveBack: () => {
           gsap.set(Elem, { position: "fixed", top: "0" });
         },
+        // pin: true,
+        // pinSpacing: true,
       },
     });
 
