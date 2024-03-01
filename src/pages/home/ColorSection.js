@@ -25,7 +25,7 @@ const Right = styled.div`
   width: 50%;
   height: 100%;
   display: flex;
-  background-color: rgba(155, 181, 206, 0.4);
+  background-color: rgba(155, 181, 206, 0.8);
   position: relative;
 `;
 
@@ -39,7 +39,7 @@ const Center = styled.div`
   font-size: 32px;
   color: #9bb5ce;
   text-transform: uppercase;
-  filter: brightness(0.85);
+  /* filter: brightness(0.85); */
 `;
 
 export const ColorSection = () => {
@@ -61,7 +61,7 @@ export const ColorSection = () => {
       textElem.innerText = text;
       textElem.style.color = color;
       leftElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
-      rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.4)`;
+      rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
     };
 
     let t1 = gsap.timeline({
