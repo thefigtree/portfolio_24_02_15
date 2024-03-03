@@ -11,6 +11,23 @@ const Section = styled.section`
   align-items: center;
 `;
 
+const TextCon = styled.div`
+  width: 100%;
+  height: 50vh;
+  /* background-color: aliceblue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-size: 100px;
+`;
+
 export const SyntacticSugar = () => {
-  return <Section>SyntacticSugar</Section>;
+  return (
+    <Section>
+      <TextCon>
+        <span>Syntactic</span>
+        <span>Sugar.</span>
+      </TextCon>
+    </Section>
+  );
 };
