@@ -4,8 +4,7 @@ const Section = styled.section`
   width: 100vw;
   height: 100vh;
   position: relative;
-  background-color: #111;
-  color: white;
+  background-color: #3000f0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +18,13 @@ const TextCon = styled.div`
   justify-content: space-between;
   align-items: end;
   font-size: 100px;
+  span {
+    font-family: "Geologica", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: 7px;
+    color: #ff0098;
+  }
 `;
 
 export const SyntacticSugar = () => {

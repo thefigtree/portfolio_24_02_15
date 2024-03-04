@@ -3,8 +3,8 @@ import styled from "styled-components";
 const SHeader = styled.header`
   width: 100%;
   padding: 5px 5%;
-  background-color: #111;
-  border-bottom: 1px solid pink;
+  background-color: #3000f0;
+  border-bottom: 1px solid #ff0098;
   display: flex;
   justify-content: end;
   position: relative;
@@ -19,7 +19,7 @@ const Menu = styled.ul`
   /* background-color: rebeccapurple; */
   justify-content: space-between;
   align-items: center;
-  color: pink;
+  color: #ff0098;
   font-size: 40px;
   li {
     margin-right: 20px;
