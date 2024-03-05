@@ -54,6 +54,14 @@ const TextCon = styled.div`
   }
 `;
 
+const Stick = styled.div`
+  width: 90%;
+  height: 1px;
+  background-color: gray;
+  position: absolute;
+  bottom: 0;
+`;
+
 export const SyntacticSugar = () => {
   return (
     <Section>
@@ -61,6 +69,7 @@ export const SyntacticSugar = () => {
         <span className="syntactic">Syntactic</span>
         <span className="sugar">Sugar.</span>
       </TextCon>
+      <Stick></Stick>
     </Section>
   );
 };
