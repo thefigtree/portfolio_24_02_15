@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 const Section = styled.section`
   width: 100vw;
@@ -8,50 +8,15 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 `;
 
-const moveUp = keyframes`
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-`;
-
-const TextCon = styled.div`
-  width: 100%;
-  height: 50vh;
-  position: relative;
-  /* background-color: aliceblue; */
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
+const TextCon = styled.h2`
   font-size: 100px;
-  span {
-    font-family: "Geologica", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    letter-spacing: 7px;
-    color: gray;
-    position: absolute;
-  }
-  .syntactic {
-    transform: translateX(-100px);
-    animation-name: ${moveUp};
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-duration: 2s;
-    opacity: 0;
-  }
-  .sugar {
-    right: 0;
-    transform: translateX(100px);
-    opacity: 0;
-    animation-name: ${moveUp};
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-duration: 2s;
-  }
+  font-family: "Geologica", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 3px;
+  color: gray;
 `;
 
 const Stick = styled.div`
@@ -65,10 +30,7 @@ const Stick = styled.div`
 export const SyntacticSugar = () => {
   return (
     <Section>
-      <TextCon>
-        <span className="syntactic">Syntactic</span>
-        <span className="sugar">Sugar.</span>
-      </TextCon>
+      <TextCon>SyntacticSugar.</TextCon>
       <Stick></Stick>
     </Section>
   );
