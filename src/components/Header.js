@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { routes } from "../routes";
 import styled from "styled-components";
 
 const SHeader = styled.header`
@@ -29,9 +31,15 @@ export const Header = () => {
   return (
     <SHeader>
       <Menu>
-        <li>About</li>
-        <li>Stack</li>
-        <li>Contact</li>
+        <li>
+          <Link to={routes.about}>About</Link>
+        </li>
+        <li>
+          <Link to={routes.stack}>Stack</Link>
+        </li>
+        <li>
+          <Link to={routes.contact}>Contact</Link>
+        </li>
       </Menu>
     </SHeader>
   );

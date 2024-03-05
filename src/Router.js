@@ -6,6 +6,7 @@ import { routes } from "./routes";
 import { About } from "./about/About";
 import { Stack } from "./stack/Stack";
 import { Contact } from "./contact/Contact";
+import { GlobalStyled } from "./style/GlobalStyled";
 
 const Router = () => {
   return (
