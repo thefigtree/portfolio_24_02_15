@@ -79,7 +79,10 @@ export const SyntacticSugar = () => {
         });
       },
     });
-  });
+    // return () => {
+    //   if (SplitText) SplitText.revert();
+    // };
+  }, []);
 
   return (
     <Section>
