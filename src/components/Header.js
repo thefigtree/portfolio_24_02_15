@@ -5,8 +5,8 @@ import styled from "styled-components";
 const SHeader = styled.header`
   width: 100%;
   padding: 5px 5%;
-  background-color: #ff98a2;
-  border-bottom: 1px solid gray;
+  background-color: black;
+  border-bottom: 1px solid #fbd9dd;
   display: flex;
   justify-content: end;
   position: relative;

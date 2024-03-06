@@ -1,5 +1,4 @@
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
 import { useLayoutEffect, useRef } from "react";
 import SplitType from "split-type";
 import styled from "styled-components";
@@ -8,19 +7,19 @@ const Section = styled.section`
   width: 100vw;
   height: 100vh;
   position: relative;
-  background-color: #ff98a2;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const TextCon = styled.h2`
-  font-size: 100px;
+  font-size: 160px;
   font-family: "Geologica", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   letter-spacing: 3px;
-  color: #0e0e0e;
+  color: white;
 `;
 
 const Stick = styled.div`
@@ -40,7 +39,8 @@ export const SyntacticSugar = () => {
     "#f7b1cf",
     "#86c1f7",
     "#ffd570",
-    "#0e0e0e",
+    "#f6bbc1",
+    "#fbd9dd",
   ];
   const STEP_DURATION = 0.1;
 
@@ -52,6 +52,7 @@ export const SyntacticSugar = () => {
     const SplitText = new SplitType(Elem, { types: "chars" });
 
     gsap.set(SplitText.chars, { color: COLORS_ARRAY[0] });
+
     gsap.registerEffect({
       name: "changeColor",
       effect: (targets, config) => {
@@ -63,6 +64,7 @@ export const SyntacticSugar = () => {
       default: { duration: STEP_DURATION },
       extendTimeline: true,
     });
+
     gsap.from(SplitText.chars, {
       scale: 0,
       stagger: STEP_DURATION,
@@ -81,7 +83,7 @@ export const SyntacticSugar = () => {
 
   return (
     <Section>
-      <TextCon ref={colorRef}>SyntacticSugar.</TextCon>
+      <TextCon ref={colorRef}>SyntacticSugar :</TextCon>
       <Stick></Stick>
     </Section>
   );
