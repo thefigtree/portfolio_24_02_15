@@ -32,19 +32,20 @@ const Stick = styled.div`
 
 export const SyntacticSugar = () => {
   const colorRef = useRef(null);
-  const COLORS_ARRAY = [
-    "#f25b40",
-    "#2c3d71",
-    "#e92d65",
-    "#f7b1cf",
-    "#86c1f7",
-    "#ffd570",
-    "#f6bbc1",
-    "#fbd9dd",
-  ];
+
   const STEP_DURATION = 0.1;
 
   useLayoutEffect(() => {
+    const COLORS_ARRAY = [
+      "#f25b40",
+      "#2c3d71",
+      "#e92d65",
+      "#f7b1cf",
+      "#86c1f7",
+      "#ffd570",
+      "#f6bbc1",
+      "#fbd9dd",
+    ];
     let Elem = colorRef.current;
 
     gsap.set(Elem, { autoAlpha: 1 });
