@@ -4,12 +4,12 @@ import SplitType from "split-type";
 import styled from "styled-components";
 
 const Section = styled.section`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
-  background-color: black;
+  background-color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -23,11 +23,20 @@ const TextCon = styled.h2`
 `;
 
 const Stick = styled.div`
-  width: 90%;
-  height: 1px;
-  background-color: gray;
+  width: 1px;
+  height: 100%;
+  background-color: #98fb98;
   position: absolute;
-  bottom: 0;
+  top: 0;
+  left: 25%;
+  .second {
+    width: 1px;
+    height: 100%;
+    background-color: #98fb98;
+    position: absolute;
+    top: 0;
+    left: 50%;
+  }
 `;
 
 export const SyntacticSugar = () => {
@@ -37,14 +46,15 @@ export const SyntacticSugar = () => {
 
   useLayoutEffect(() => {
     const COLORS_ARRAY = [
-      "#f25b40",
-      "#2c3d71",
-      "#e92d65",
-      "#f7b1cf",
-      "#86c1f7",
-      "#ffd570",
-      "#f6bbc1",
-      "#fbd9dd",
+      "#fff",
+      "#fff",
+      "#fff",
+      "#f1fff1",
+      "#deffde",
+      "#cefbce",
+      "#bbfcbb",
+      "#98fb98",
+      "#6dff6d",
     ];
     let Elem = colorRef.current;
 
@@ -87,8 +97,10 @@ export const SyntacticSugar = () => {
 
   return (
     <Section>
-      <TextCon ref={colorRef}>SyntacticSugar :</TextCon>
+      <TextCon ref={colorRef}>SyntacticSugar</TextCon>
       <Stick></Stick>
+      <Stick className="second"></Stick>
+      <Stick className="third"></Stick>
     </Section>
   );
 };

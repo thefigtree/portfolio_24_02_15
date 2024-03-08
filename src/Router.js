@@ -4,7 +4,7 @@ import { Home } from "./pages/home/Home";
 import { Header } from "./components/Header";
 import { routes } from "./routes";
 import { About } from "./about/About";
-import { Stack } from "./stack/Stack";
+import { Archive } from "./archive/Archive";
 import { Contact } from "./contact/Contact";
 
 const Router = () => {
@@ -14,7 +14,7 @@ const Router = () => {
       <Routes>
         <Route path={routes.home} element={<Home></Home>}></Route>
         <Route path={routes.about} element={<About></About>}></Route>
-        <Route path={routes.stack} element={<Stack></Stack>}></Route>
+        <Route path={routes.archive} element={<Archive></Archive>}></Route>
         <Route path={routes.contact} element={<Contact></Contact>}></Route>
         <Route path="/*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
