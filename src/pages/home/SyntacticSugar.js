@@ -8,15 +8,19 @@ const Section = styled.section`
   height: 100vh;
   position: relative;
   background-color: #fff;
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 `;
 
 const TextCon = styled.h2`
-  font-size: 160px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  font-size: 300px;
   font-family: "Geologica", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
   letter-spacing: 3px;
   color: white;
@@ -25,17 +29,15 @@ const TextCon = styled.h2`
 const Stick = styled.div`
   width: 1px;
   height: 100%;
-  background-color: #98fb98;
+  background-color: silver;
   position: absolute;
   top: 0;
   left: 25%;
-  .second {
-    width: 1px;
-    height: 100%;
-    background-color: #98fb98;
-    position: absolute;
-    top: 0;
+  &:nth-child(2) {
     left: 50%;
+  }
+  &:nth-child(3) {
+    left: 75%;
   }
 `;
 
@@ -47,14 +49,16 @@ export const SyntacticSugar = () => {
   useLayoutEffect(() => {
     const COLORS_ARRAY = [
       "#fff",
-      "#fff",
-      "#fff",
-      "#f1fff1",
-      "#deffde",
-      "#cefbce",
-      "#bbfcbb",
-      "#98fb98",
-      "#6dff6d",
+      // "#eaeaea",
+      // "#e6e6e6",
+      // "#d3d3d3",
+      // "#b4b4b4",
+      // "#919191",
+      "#00000080",
+      // "#6f6f6f",
+      // "#4b4b4b",
+      // "#262626",
+      "#000000",
     ];
     let Elem = colorRef.current;
 
@@ -97,10 +101,10 @@ export const SyntacticSugar = () => {
 
   return (
     <Section>
-      <TextCon ref={colorRef}>SyntacticSugar</TextCon>
       <Stick></Stick>
-      <Stick className="second"></Stick>
-      <Stick className="third"></Stick>
+      <Stick></Stick>
+      <Stick></Stick>
+      <TextCon ref={colorRef}>SS</TextCon>
     </Section>
   );
 };

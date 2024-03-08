@@ -16,6 +16,21 @@ const SHeader = styled.header`
   /* z-index: 10; */
 `;
 
+const Stick = styled.div`
+  width: 1px;
+  height: 100%;
+  background-color: silver;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  &:nth-child(2) {
+    left: 50%;
+  }
+  &:nth-child(3) {
+    left: 75%;
+  }
+`;
+
 const Logo = styled.div`
   margin-right: 20px;
   letter-spacing: 2px;
@@ -36,6 +51,9 @@ const Menu = styled.ul`
 export const Header = () => {
   return (
     <SHeader>
+      <Stick></Stick>
+      <Stick></Stick>
+      <Stick></Stick>
       <Logo>
         <Link to={routes.home}>이동진</Link>
       </Logo>
