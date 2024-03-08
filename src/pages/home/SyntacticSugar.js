@@ -14,22 +14,23 @@ const Section = styled.section`
 `;
 
 const TextCon = styled.h2`
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -75%);
-  font-size: 300px;
+  transform: translate(-50%, -65%);
+  font-size: 200px;
   font-family: "Geologica", sans-serif;
   font-weight: 400;
   font-style: normal;
-  letter-spacing: 3px;
+  /* letter-spacing: 3px; */
   color: white;
 `;
 
 const Stick = styled.div`
   width: 1px;
   height: 100%;
-  background-color: silver;
+  background-color: #000;
   position: absolute;
   top: 0;
   left: 25%;
@@ -44,7 +45,7 @@ const Stick = styled.div`
 export const SyntacticSugar = () => {
   const colorRef = useRef(null);
 
-  const STEP_DURATION = 0.1;
+  const STEP_DURATION = 0.15;
 
   useLayoutEffect(() => {
     const COLORS_ARRAY = [
@@ -104,7 +105,7 @@ export const SyntacticSugar = () => {
       <Stick></Stick>
       <Stick></Stick>
       <Stick></Stick>
-      <TextCon ref={colorRef}>SS</TextCon>
+      <TextCon ref={colorRef}>SyntacticSugar</TextCon>
     </Section>
   );
 };
