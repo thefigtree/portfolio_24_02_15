@@ -19,7 +19,7 @@ const TextCon = styled.h2`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -65%);
-  font-size: 200px;
+  font-size: 170px;
   font-family: "Geologica", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -30,7 +30,7 @@ const TextCon = styled.h2`
 const Stick = styled.div`
   width: 1px;
   height: 100%;
-  background-color: #000;
+  background-color: silver;
   position: absolute;
   top: 0;
   left: 25%;
@@ -49,17 +49,13 @@ export const SyntacticSugar = () => {
 
   useLayoutEffect(() => {
     const COLORS_ARRAY = [
-      "#fff",
-      // "#eaeaea",
-      // "#e6e6e6",
-      // "#d3d3d3",
-      // "#b4b4b4",
-      // "#919191",
-      "#00000080",
-      // "#6f6f6f",
-      // "#4b4b4b",
-      // "#262626",
-      "#000000",
+      "#f25b40",
+      "#2c3d71",
+      "#e92d65",
+      "#f7b1cf",
+      "#86c1f7",
+      "#ffd570",
+      "#0e0e0e",
     ];
     let Elem = colorRef.current;
 
