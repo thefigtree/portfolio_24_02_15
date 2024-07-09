@@ -17,21 +17,6 @@ const SHeader = styled.header`
   z-index: 10;
 `;
 
-const Stick = styled.div`
-  width: 1px;
-  height: 100%;
-  background-color: silver;
-  position: absolute;
-  top: 0;
-  left: 25%;
-  &:nth-child(2) {
-    left: 50%;
-  }
-  &:nth-child(3) {
-    left: 75%;
-  }
-`;
-
 // const Wrap = styled.div`
 //   width: 100%;
 //   height: 100%;
@@ -45,7 +30,7 @@ const Logo = styled.div`
 
   font-size: 22px;
   position: absolute;
-  background-color: blue;
+  /* background-color: blue; */
   left: 0;
   top: 50%;
   transform: translateY(-50%);
@@ -56,7 +41,7 @@ const Logo = styled.div`
 const Menu = styled.ul`
   width: 75%;
   position: absolute;
-  background-color: red;
+  /* background-color: red; */
   right: 0;
   top: 50%;
   transform: translateY(-50%);
@@ -80,10 +65,6 @@ const Menu = styled.ul`
 export const Header = () => {
   return (
     <SHeader>
-      <Stick></Stick>
-      <Stick></Stick>
-      <Stick></Stick>
-
       <Logo>
         <Link to={routes.home}>이동진</Link>
       </Logo>

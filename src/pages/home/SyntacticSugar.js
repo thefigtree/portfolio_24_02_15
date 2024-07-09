@@ -27,21 +27,6 @@ const TextCon = styled.h2`
   color: white;
 `;
 
-const Stick = styled.div`
-  width: 1px;
-  height: 100%;
-  background-color: silver;
-  position: absolute;
-  top: 0;
-  left: 25%;
-  &:nth-child(2) {
-    left: 50%;
-  }
-  &:nth-child(3) {
-    left: 75%;
-  }
-`;
-
 export const SyntacticSugar = () => {
   const colorRef = useRef(null);
 
@@ -98,9 +83,6 @@ export const SyntacticSugar = () => {
 
   return (
     <Section>
-      <Stick></Stick>
-      <Stick></Stick>
-      <Stick></Stick>
       <TextCon ref={colorRef}>SyntacticSugar</TextCon>
     </Section>
   );
