@@ -1,22 +1,25 @@
 import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
 import SplitType from "split-type";
-
 import { Link } from "react-router-dom";
 import { routes } from "../routes";
 import styled from "styled-components";
 
 const SHeader = styled.header`
   width: 100%;
-  padding: 30px 0%;
+  padding: 40px 0%;
   background-color: #fff;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
+
+  a {
+    color: #6e6e73;
+  }
 `;
 
 const Logo = styled.div`
@@ -36,7 +39,6 @@ const Menu = styled.ul`
   li {
     font-size: 15px;
     margin-left: 30px;
-    color: gray;
   }
 `;
 
@@ -97,7 +99,7 @@ export const Header = () => {
   return (
     <SHeader>
       <Logo ref={colorRef}>
-        <Link to={routes.home}>j !n</Link>
+        <Link to={routes.home}>J !N</Link>
       </Logo>
       <Menu>
         <li>
