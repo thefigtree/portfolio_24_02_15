@@ -248,7 +248,7 @@ export const ColorSection = () => {
       {/* <Center ref={textRef}>Sierra Blue</Center> */}
       <Right ref={rightRef}>
         <MobileContent>
-          <div className="mobilePhoto" color="red"></div>
+          <div className="mobilePhoto" style={{ backgroundColor: `red` }}></div>
           <h1>Sierra Blue</h1>
           <p>
             Red is a color often associated with strong emotions such as
@@ -256,7 +256,10 @@ export const ColorSection = () => {
             that can evoke feelings of excitement, warmth, and energy.
           </p>
 
-          <div className="mobilePhoto" color="green"></div>
+          <div
+            className="mobilePhoto"
+            style={{ backgroundColor: `green` }}
+          ></div>
           <h1>Gold</h1>
           <p>
             Green is a color that is often associated with nature, growth, and
@@ -266,7 +269,10 @@ export const ColorSection = () => {
             for branding and marketing in the health and wellness industry.
           </p>
 
-          <div className="mobilePhoto" color="pink"></div>
+          <div
+            className="mobilePhoto"
+            style={{ backgroundColor: `pink` }}
+          ></div>
           <h1>Alpine Green</h1>
           <p>
             Pink is a color that is often associated with femininity, romance,
@@ -289,7 +295,10 @@ export const ColorSection = () => {
             symbolizes love, innocence, and new beginnings.
           </p>
 
-          <div className="mobilePhoto" color="blue"></div>
+          <div
+            className="mobilePhoto"
+            style={{ backgroundColor: `blue` }}
+          ></div>
           <h1>Deep Purple</h1>
           <p>
             Blue is a color that is often associated with calmness, trust, and
@@ -302,10 +311,22 @@ export const ColorSection = () => {
         </MobileContent>
 
         <DesktopPhotos>
-          <div className="desktopPhoto" color="red"></div>
-          <div className="desktopPhoto" color="green"></div>
-          <div className="desktopPhoto" color="pink"></div>
-          <div className="desktopPhoto" color="blue"></div>
+          <div
+            className="desktopPhoto"
+            style={{ backgroundColor: `red` }}
+          ></div>
+          <div
+            className="desktopPhoto"
+            style={{ backgroundColor: `green` }}
+          ></div>
+          <div
+            className="desktopPhoto"
+            style={{ backgroundColor: `pink` }}
+          ></div>
+          <div
+            className="desktopPhoto"
+            style={{ backgroundColor: `blue` }}
+          ></div>
         </DesktopPhotos>
       </Right>
     </Section>
