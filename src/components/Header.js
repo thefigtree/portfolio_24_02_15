@@ -8,7 +8,7 @@ import styled from "styled-components";
 const SHeader = styled.header`
   width: 100%;
   padding: 40px 0%;
-  background-color: #fff;
+  /* background-color: #fff; */
   display: flex;
   justify-content: space-around;
   align-items: center;
