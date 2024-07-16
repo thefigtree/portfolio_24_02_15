@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 // import { useScrollTop } from "../../lib/useScrollTop";
 
@@ -34,7 +34,7 @@ const DesktopContent = styled.div`
   margin: auto;
   width: 80%;
 
-  &.desktopContentSection {
+  .desktopContentSection {
     min-height: 100vh;
     outline: 1px solid green;
     display: flex;
@@ -57,7 +57,7 @@ const MobileContent = styled.div`
   display: none;
   width: 80vw;
 
-  &.mobilePhoto {
+  .mobilePhoto {
     width: 80vw;
     height: 80vw;
     margin-top: 5em;
@@ -66,14 +66,14 @@ const MobileContent = styled.div`
 `;
 
 const DesktopPhotos = styled.div`
-  width: 40vw;
-  height: 40vw;
+  width: 20vw;
+  height: 20vw;
   border-radius: 20px;
   position: relative;
   overflow: hidden;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
 
-  &.desktopPhoto {
+  .desktopPhoto {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -92,9 +92,10 @@ const DesktopPhotos = styled.div`
   &.pink {
     background-color: deepPink;
   } */
+  //
 `;
 
-// const Center = styled.div`
+// const Center = styled.div`;
 //   width: 100%;
 //   text-align: center;
 //   position: absolute;
@@ -114,7 +115,7 @@ export const ColorSection = () => {
   // const textRef = useRef(null);
   // useScrollTop();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     let Elem = sectionRef.current;
@@ -173,6 +174,9 @@ export const ColorSection = () => {
       rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
     };
 
+    // const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)");
+    // const allPhotos = gsap.utils.toArray(".desktopPhoto");
+
     let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: Elem,
@@ -210,6 +214,8 @@ export const ColorSection = () => {
       onReverseComplete: updateColor,
       onReverseCompleteParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
     });
+
+    // gsap.set(photos, { yPercent: 101 });
 
     // console.log(Elem.offsetWidth);
     // console.log(updateColor);
@@ -346,20 +352,36 @@ export const ColorSection = () => {
         <DesktopPhotos>
           <div
             className="desktopPhoto"
-            style={{ backgroundColor: `red` }}
-          ></div>
+            style={{
+              backgroundColor: "red",
+            }}
+          >
+            1
+          </div>
           <div
             className="desktopPhoto"
-            style={{ backgroundColor: `green` }}
-          ></div>
+            style={{
+              backgroundColor: "green",
+            }}
+          >
+            2
+          </div>
           <div
             className="desktopPhoto"
-            style={{ backgroundColor: `pink` }}
-          ></div>
+            style={{
+              backgroundColor: "pink",
+            }}
+          >
+            3
+          </div>
           <div
             className="desktopPhoto"
-            style={{ backgroundColor: `blue` }}
-          ></div>
+            style={{
+              backgroundColor: "blue",
+            }}
+          >
+            4
+          </div>
         </DesktopPhotos>
       </Right>
     </Section>
