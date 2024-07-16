@@ -66,8 +66,8 @@ const MobileContent = styled.div`
 `;
 
 const DesktopPhotos = styled.div`
-  width: 20vw;
-  height: 20vw;
+  width: 40vw;
+  height: 40vw;
   border-radius: 20px;
   position: relative;
   overflow: hidden;
@@ -121,61 +121,17 @@ export const ColorSection = () => {
     let Elem = sectionRef.current;
     let leftElem = leftRef.current;
     let rightElem = rightRef.current;
-    // // let textElem = textRef.current;
-    // const details = gsap.utils.toArray(
-    //   ".desktopContentSection:not(:first-child)"
-    // );
-    // const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)");
-    // gsap.set(photos, { yPercent: 101 });
-
-    // const allPhotos = gsap.utils.toArray(".desktopPhoto");
-
-    // let mm = gsap.matchMedia();
-
-    // mm.add("(min-width: 600px)", () => {
-    //   // this setup code only runs when viewport is at least 600px wide
-    //   console.log("desktop");
-
-    //   ScrollTrigger.create({
-    //     trigger: Elem,
-    //     start: "top top",
-    //     end: "bottom bottom",
-    //     pin: rightElem,
-    //   });
-
-    //   //create scrolltrigger for each details section
-    //   //trigger photo animation when headline of each details section
-    //   //reaches 80% of window height
-    //   details.forEach((detail, index) => {
-    //     let headline = detail.querySelector("h1");
-    //     let animation = gsap
-    //       .timeline()
-    //       .to(photos[index], { yPercent: 0 })
-    //       .set(allPhotos[index], { autoAlpha: 0 });
-    //     ScrollTrigger.create({
-    //       trigger: headline,
-    //       start: "top 80%",
-    //       end: "top 50%",
-    //       animation: animation,
-    //       scrub: true,
-    //       markers: false,
-    //     });
-    //   });
-
-    //   return () => {
-    //     // optional
-    //     // custom cleanup code here (runs when it STOPS matching)
-    //     console.log("mobile");
-    //   };
-    // });
+    const details = gsap.utils.toArray(
+      ".desktopContentSection:not(:first-child)"
+    );
+    const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)");
+    gsap.set(photos, { yPercent: 101 });
+    const allPhotos = gsap.utils.toArray(".desktopPhoto");
 
     let updateColor = (color, text, rgbColor) => {
       leftElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
       rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
     };
-
-    // const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)");
-    // const allPhotos = gsap.utils.toArray(".desktopPhoto");
 
     let t1 = gsap.timeline({
       scrollTrigger: {
@@ -214,8 +170,6 @@ export const ColorSection = () => {
       onReverseComplete: updateColor,
       onReverseCompleteParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
     });
-
-    // gsap.set(photos, { yPercent: 101 });
 
     // console.log(Elem.offsetWidth);
     // console.log(updateColor);
