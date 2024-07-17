@@ -267,7 +267,7 @@ export const ColorSection = () => {
         </DesktopContent>
       </Left>
       {/* <Center ref={textRef}>Sierra Blue</Center> */}
-      <Right className="right" ref={rightRef}>
+      <Right ref={rightRef}>
         <MobileContent>
           <div className="mobilePhoto" style={{ backgroundColor: `red` }}></div>
           <h1>Sierra Blue</h1>
