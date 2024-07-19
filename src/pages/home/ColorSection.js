@@ -151,7 +151,7 @@ export const ColorSection = () => {
           end: "top 50%",
           animation: animation,
           scrub: true,
-          markers: false,
+          markers: true,
         });
       });
     });
