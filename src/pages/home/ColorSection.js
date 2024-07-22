@@ -79,34 +79,7 @@ const DesktopPhotos = styled.div`
     height: 100%;
     /* background-color: ${(props) => props.bgColor}; */
   }
-
-  /* &.red {
-    background-color: crimson;
-  }
-  &.green {
-    background-color: MediumSeaGreen;
-  }
-  &.blue {
-    background-color: dodgerblue;
-  }
-  &.pink {
-    background-color: deepPink;
-  } */
-  //
 `;
-
-// const Center = styled.div`;
-//   width: 100%;
-//   text-align: center;
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   font-size: 32px;
-//   color: #9bb5ce;
-//   text-transform: uppercase;
-//   /* filter: brightness(0.85); */
-// `;
 
 export const ColorSection = () => {
   const sectionRef = useRef(null);
