@@ -94,90 +94,90 @@ export const ColorSection = () => {
     let Elem = sectionRef.current;
     let leftElem = leftRef.current;
     let rightElem = rightRef.current;
-    const details = gsap.utils.toArray(
-      ".desktopContentSection:not(:first-child)"
-    );
-    const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)");
-    gsap.set(photos, { yPercent: 101 });
-    const allPhotos = gsap.utils.toArray(".desktopPhoto");
-    let mm = gsap.matchMedia();
+    // const details = gsap.utils.toArray(
+    //   ".desktopContentSection:not(:first-child)"
+    // );
+    // const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)");
+    // gsap.set(photos, { yPercent: 101 });
+    // const allPhotos = gsap.utils.toArray(".desktopPhoto");
+    // let mm = gsap.matchMedia();
 
-    mm.add("(min-width: 600px)", () => {
-      console.log("desktop");
+    // mm.add("(min-width: 600px)", () => {
+    //   console.log("desktop");
 
-      ScrollTrigger.create({
-        trigger: Elem,
-        start: "top top",
-        end: "bottom bottom",
-        pin: rightElem,
-      });
-
-      details.forEach((detail, index) => {
-        let headline = detail.querySelector("h1");
-        let animation = gsap
-          .timeline()
-          .to(photos[index], { yPercent: 0 })
-          .set(allPhotos[index], { autoAlpha: 0 });
-        ScrollTrigger.create({
-          trigger: headline,
-          start: "top 80%",
-          end: "top 50%",
-          animation: animation,
-          scrub: true,
-          markers: true,
-        });
-      });
-    });
-
-    // let updateColor = (color, text, rgbColor) => {
-    //   leftElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
-    //   rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
-    // };
-
-    // let t1 = gsap.timeline({
-    //   scrollTrigger: {
+    //   ScrollTrigger.create({
     //     trigger: Elem,
     //     start: "top top",
-    //     end: `${Elem.offsetWidth + 1000}`,
-    //     scrub: true,
-    //     // snap: 1,
-    //     pin: true,
-    //     pinSpacing: true,
-    //     markers: true,
-    //   },
+    //     end: "bottom bottom",
+    //     pin: rightElem,
+    //   });
+
+    //   details.forEach((detail, index) => {
+    //     let headline = detail.querySelector("h1");
+    //     let animation = gsap
+    //       .timeline()
+    //       .to(photos[index], { yPercent: 0 })
+    //       .set(allPhotos[index], { autoAlpha: 0 });
+    //     ScrollTrigger.create({
+    //       trigger: headline,
+    //       start: "top 80%",
+    //       end: "top 50%",
+    //       animation: animation,
+    //       scrub: true,
+    //       markers: true,
+    //     });
+    //   });
     // });
 
-    // t1.to(Elem, {
-    //   onStart: updateColor,
-    //   onStartParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
-    //   onReverseComplete: updateColor,
-    //   onReverseCompleteParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
-    // });
-    // t1.to(Elem, {
-    //   onStart: updateColor,
-    //   onStartParams: ["#F9E5C9", "Gold", "249, 229, 201"],
-    //   onReverseComplete: updateColor,
-    //   onReverseCompleteParams: ["#F9E5C9", "Gold", "249, 229, 201"],
-    // });
-    // t1.to(Elem, {
-    //   onStart: updateColor,
-    //   onStartParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
-    //   onReverseComplete: updateColor,
-    //   onReverseCompleteParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
-    // });
-    // t1.to(Elem, {
-    //   onStart: updateColor,
-    //   onStartParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
-    //   onReverseComplete: updateColor,
-    //   onReverseCompleteParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
-    // });
+    let updateColor = (color, text, rgbColor) => {
+      leftElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
+      rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
+    };
 
-    // console.log(Elem.offsetWidth);
-    // console.log(updateColor);
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: Elem,
+        start: "top top",
+        end: `${Elem.offsetWidth + 1000}`,
+        scrub: true,
+        // snap: 1,
+        pin: true,
+        pinSpacing: true,
+        markers: true,
+      },
+    });
 
-    // return () => {
-    //   if (t1) t1.revert();
-    // };
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
+    });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#F9E5C9", "Gold", "249, 229, 201"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#F9E5C9", "Gold", "249, 229, 201"],
+    });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
+    });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
+    });
+
+    console.log(Elem.offsetWidth);
+    console.log(updateColor);
+
+    return () => {
+      if (t1) t1.revert();
+    };
   }, []);
 
   return (
