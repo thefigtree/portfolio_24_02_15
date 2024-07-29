@@ -9,8 +9,6 @@ const Section = styled.section`
   height: 100vh;
   position: relative;
   display: flex;
-  /* justify-content: space-between; */
-  /* align-items: center; */
 
   h1 {
     font-size: clamp(2em, 4vw, 6em);
