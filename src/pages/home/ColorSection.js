@@ -104,7 +104,7 @@ export const ColorSection = () => {
       end: "bottom bottom",
       pin: ".right",
     });
-    // let mm = gsap.matchMedia();
+    let mm = gsap.matchMedia();
 
     // mm.add("(min-width: 600px)", () => {
     //   console.log("desktop");
