@@ -92,19 +92,19 @@ export const ColorSection = () => {
     let Elem = sectionRef.current;
     let leftElem = leftRef.current;
     let rightElem = rightRef.current;
-    const details = gsap.utils.toArray(
-      ".desktopContentSection:not(:first-child)"
-    );
-    const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)");
-    gsap.set(photos, { yPercent: 101 });
-    const allPhotos = gsap.utils.toArray(".desktopPhoto");
-    ScrollTrigger.create({
-      trigger: ".gallery",
-      start: "top top",
-      end: "bottom bottom",
-      pin: ".right",
-    });
-    let mm = gsap.matchMedia();
+    // const details = gsap.utils.toArray(
+    //   ".desktopContentSection:not(:first-child)"
+    // );
+    // const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)");
+    // gsap.set(photos, { yPercent: 101 });
+    // const allPhotos = gsap.utils.toArray(".desktopPhoto");
+    // ScrollTrigger.create({
+    //   trigger: ".gallery",
+    //   start: "top top",
+    //   end: "bottom bottom",
+    //   pin: ".right",
+    // });
+    // let mm = gsap.matchMedia();
 
     // mm.add("(min-width: 600px)", () => {
     //   console.log("desktop");
@@ -133,55 +133,55 @@ export const ColorSection = () => {
     //   });
     // });
 
-    // let updateColor = (color, text, rgbColor) => {
-    //   leftElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
-    //   rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
-    // };
+    let updateColor = (color, text, rgbColor) => {
+      leftElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
+      rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
+    };
 
-    // let t1 = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: Elem,
-    //     start: "top top",
-    //     end: `${Elem.offsetWidth + 1000}`,
-    //     scrub: true,
-    //     // snap: 1,
-    //     pin: true,
-    //     pinSpacing: true,
-    //     markers: true,
-    //   },
-    // });
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: Elem,
+        start: "top top",
+        end: `${Elem.offsetWidth + 1000}`,
+        scrub: true,
+        // snap: 1,
+        pin: true,
+        pinSpacing: true,
+        markers: true,
+      },
+    });
 
-    // t1.to(Elem, {
-    //   onStart: updateColor,
-    //   onStartParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
-    //   onReverseComplete: updateColor,
-    //   onReverseCompleteParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
-    // });
-    // t1.to(Elem, {
-    //   onStart: updateColor,
-    //   onStartParams: ["#F9E5C9", "Gold", "249, 229, 201"],
-    //   onReverseComplete: updateColor,
-    //   onReverseCompleteParams: ["#F9E5C9", "Gold", "249, 229, 201"],
-    // });
-    // t1.to(Elem, {
-    //   onStart: updateColor,
-    //   onStartParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
-    //   onReverseComplete: updateColor,
-    //   onReverseCompleteParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
-    // });
-    // t1.to(Elem, {
-    //   onStart: updateColor,
-    //   onStartParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
-    //   onReverseComplete: updateColor,
-    //   onReverseCompleteParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
-    // });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
+    });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#F9E5C9", "Gold", "249, 229, 201"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#F9E5C9", "Gold", "249, 229, 201"],
+    });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
+    });
+    t1.to(Elem, {
+      onStart: updateColor,
+      onStartParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
+      onReverseComplete: updateColor,
+      onReverseCompleteParams: ["#574F6F", "Deep Purple", "87, 79, 111"],
+    });
 
-    // console.log(Elem.offsetWidth);
-    // console.log(updateColor);
+    console.log(Elem.offsetWidth);
+    console.log(updateColor);
 
-    // return () => {
-    //   if (t1) t1.revert();
-    // };
+    return () => {
+      if (t1) t1.revert();
+    };
   }, []);
 
   return (
