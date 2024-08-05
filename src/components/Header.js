@@ -103,7 +103,7 @@ export const Header = () => {
       </Logo>
       <Menu>
         <li>
-          <Link to={routes.archives}>Archives</Link>
+          <Link to={routes.portfolio}>Portfolio</Link>
         </li>
         <li>
           <Link to={routes.about}>About</Link>
